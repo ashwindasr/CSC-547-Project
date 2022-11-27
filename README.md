@@ -11,5 +11,5 @@ Step 6: Deploy a metrics-server using `kubectl apply -f components.yaml` and wai
 `<br>
 Step 7: Deploy the application by running `kubectl apply -f deployment.yaml` <br>
 Step 8: Enable horizontal autoscaler by running `kubectl autoscale deployment hello-world --cpu-percent=10 --min=1 --max=10`. Run `kubectl get hpa` or ``kubectl describe hpa`` to see the status. Wait a minute or two. <br>
-Step 9: Get the ip address of the deployment by running `kubectl describe hello-world` and use that IP address to start a busybox server to test the autoscaling `kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- 10.104.209.144:9000; done"`
+Step 9: Get the ip address of the deployment by running `kubectl describe hello-world` and use that IP address to start a busybox server to test the autoscaling `kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- 10.104.209.144:9000; done"` <br>
 Step 10: Run this command on a separate terminal to see the status `kubectl get hpa hello-world --watch`
